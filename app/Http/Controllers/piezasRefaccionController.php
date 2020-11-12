@@ -26,7 +26,8 @@ class piezasRefaccionController extends Controller
      */
     public function create()
     {
-        //
+        //NOTA: No se utilizó esta función para crear recursos debido a que 
+        //      solo usa para almacenar por lo que se crea en "store()".
     }
 
     /**
@@ -54,7 +55,8 @@ class piezasRefaccionController extends Controller
      */
     public function show(piezasRefaccion $piezasRefaccion)
     {
-        //
+        //NOTA: No se usa esta función para redirigir a la vista del recurso
+        // ya que no tiene detalles extra, se visualizan todos en una lista.
     }
 
     /**
