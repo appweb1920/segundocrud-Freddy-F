@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\piezasRefaccion;
 use Illuminate\Http\Request;
+use PiezasRefaccion as GlobalPiezasRefaccion;
 
 class piezasRefaccionController extends Controller
 {
@@ -62,9 +63,10 @@ class piezasRefaccionController extends Controller
      * @param  \App\piezasRefaccion  $piezasRefaccion
      * @return \Illuminate\Http\Response
      */
-    public function edit(piezasRefaccion $piezasRefaccion)
+    public function edit(piezasRefaccion $piezasRefaccion, $id)
     {
-        //
+        $piezasRefaccion = piezasRefaccion::find($id);
+        return view('editarRefaccion')->with('piezasRefaccion', $piezasRefaccion);
     }
 
     /**
@@ -76,7 +78,13 @@ class piezasRefaccionController extends Controller
      */
     public function update(Request $request, piezasRefaccion $piezasRefaccion)
     {
-        //
+        $piezasRefaccion = piezasRefaccion::find($request->id);
+        $piezasRefaccion->nombre = $request->nombre;
+        $piezasRefaccion->descripcion = $request->descripcion;
+        $piezasRefaccion->piezasDisponibles = $request->piezasDisponibles;
+        $piezasRefaccion->costo = $request->costo;
+        $piezasRefaccion->save();
+        return redirect("/verRefacciones");
     }
 
     /**
@@ -85,8 +93,11 @@ class piezasRefaccionController extends Controller
      * @param  \App\piezasRefaccion  $piezasRefaccion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(piezasRefaccion $piezasRefaccion)
+    public function destroy(piezasRefaccion $piezasRefaccion, $id)
     {
-        //
+        $piezasRefaccion = piezasRefaccion::find($id);
+        if(!is_null($piezasRefaccion))
+            $piezasRefaccion->delete();
+        return back();
     }
 }

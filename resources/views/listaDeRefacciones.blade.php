@@ -13,7 +13,7 @@
             <thead>
                 <tr>
                     <th>Nombre de refacción</th>
-                    <th>Descripcion</th>
+                    <th>Descripción</th>
                     <th>Piezas Disponibles</th>
                     <th>Costo por pieza</th>
                 </tr>
@@ -27,8 +27,8 @@
                     <td>{{$refaccion->piezasDisponibles}}</td>
                     <td>$ {{$refaccion->costo}}</td>
                     <td>
-                        <a href="editarRegistro/{{$refaccion->id}}" class="waves-effect waves-light btn-small amber">Editar</a>
-                        <a href="borraRegistro/{{$refaccion->id}}" class="waves-effect waves-light btn-small red darken-1">Borrar </a>
+                        <a href="/editarRegistro/{{$refaccion->id}}" class="waves-effect waves-light btn-small amber">Editar</a>
+                        <a href="/borraRegistro/{{$refaccion->id}}" class="waves-effect waves-light btn-small red darken-1">Borrar </a>
                     </td>
                 </tr>
             @endforeach
