@@ -14,7 +14,8 @@ class piezasRefaccionController extends Controller
      */
     public function index()
     {
-        //
+        $refacciones = piezasRefaccion::all();
+        return view('/listaDeRefacciones')->with('listaRefacciones', $refacciones);
     }
 
     /**
@@ -35,7 +36,13 @@ class piezasRefaccionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $refaccion = new piezasRefaccion();
+        $refaccion->nombre = $request->nombre;
+        $refaccion->descripcion = $request->descripcion;
+        $refaccion->piezasDisponibles = $request->piezasDisponibles;
+        $refaccion->costo = $request->costo;
+        $refaccion->save();
+        return redirect("/inicio");
     }
 
     /**

@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,14 +20,15 @@ Route::get('/inicio', function () {
     return view('inicio');
 });
 
-Route::get('/verRefacciones', function () {
-    return view('listaDeRefacciones');
-});
+Route::get('/verRefacciones', "piezasRefaccionController@index");
 
 Route::get('/nuevaRefaccion', function () {
     return view('registraRefaccion');
 });
-Route::post('/nuevaRefaccion', "TODO:");
+Route::post('/nuevaRefaccion', "piezasRefaccionController@store");
+
+Route::get('/editarRegistro/{$id}', "piezasRefaccionController@update");
+Route::get('/borraRegistro/{$id}', "piezasRefaccionController@destroy");
 
 /* =========================================
     TODO: EVALUACION *PARCIAL* PARA SEGUNDO PARCIAL
