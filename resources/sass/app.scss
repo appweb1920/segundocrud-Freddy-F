@@ -1,8 +1,13 @@
 //Testing styles
-div{
-    border: 1px solid red;
-}
 
+//NOTA: Descomenta para prueas de padding, margenes, display de los DIV.
+// div{
+//     border: 1px solid red;
+// }
+
+div > a.opInicio{
+    margin-top: 100px;
+}
 
 a.opInicio{
     display: block;

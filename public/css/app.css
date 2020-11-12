@@ -1,5 +1,5 @@
-div {
-  border: 1px solid red;
+div > a.opInicio {
+  margin-top: 100px;
 }
 
 a.opInicio {
