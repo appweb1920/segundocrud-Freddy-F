@@ -1,1 +1,19 @@
-//
+//Testing styles
+div{
+    border: 1px solid red;
+}
+
+
+a.opInicio{
+    display: block;
+    transition: all .2s ease-in;
+    i.material-icons, h5{
+        transition: all .2s ease-in;
+    }
+}
+
+a.opInicio:hover{
+    i.material-icons, h5{
+        color: #26a69a;
+    }
+}

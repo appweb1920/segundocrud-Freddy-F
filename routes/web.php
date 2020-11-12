@@ -14,9 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
 });
 
+Route::get('/inicio', function () {
+    return view('inicio');
+});
+
+Route::get('/verRefacciones', function () {
+    return view('listaDeRefacciones');
+});
+
+Route::get('/nuevaRefaccion', function () {
+    return view('registraRefaccion');
+});
+Route::post('/nuevaRefaccion', "TODO:");
 
 /* =========================================
     TODO: EVALUACION *PARCIAL* PARA SEGUNDO PARCIAL

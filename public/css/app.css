@@ -1,0 +1,19 @@
+div {
+  border: 1px solid red;
+}
+
+a.opInicio {
+  display: block;
+  transition: all 0.2s ease-in;
+}
+
+a.opInicio i.material-icons,
+a.opInicio h5 {
+  transition: all 0.2s ease-in;
+}
+
+a.opInicio:hover i.material-icons,
+a.opInicio:hover h5 {
+  color: #26a69a;
+}
+
