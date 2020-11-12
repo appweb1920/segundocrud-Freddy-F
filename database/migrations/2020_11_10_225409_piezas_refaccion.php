@@ -18,7 +18,7 @@ class PiezasRefaccion extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->integer('piezasDisponibles');
-            $table->integer('costo');
+            $table->float('costo', 8, 2);
             $table->timestamps();
         });
     }
